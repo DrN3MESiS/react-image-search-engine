@@ -1,9 +1,11 @@
 import React from 'react';
 
-class App extends React.Component {
-  render() {
-    return <React.Fragment />;
-  }
-}
+const App = () => {
+  return (
+    <React.Fragment>
+      <div />
+    </React.Fragment>
+  );
+};
 
 export default App;
