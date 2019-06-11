@@ -1,9 +1,16 @@
 import React from 'react';
+import SearchBar from './components/SearchBar/SearchBar';
+import ImageList from './components/ImageList/ImageList';
 
 const App = () => {
   return (
     <React.Fragment>
-      <div />
+      <div
+        align="CENTER"
+        style={{ width: 100 + 'vw', height: 100 + 'vh', paddingTop: 2 + 'rem' }}
+      >
+        <SearchBar />
+      </div>
     </React.Fragment>
   );
 };
