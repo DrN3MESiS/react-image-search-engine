@@ -5,7 +5,10 @@ import ImageList from './components/ImageList/ImageList';
 const App = () => {
   return (
     <React.Fragment>
-      <div align="CENTER">
+      <div
+        align="CENTER"
+        style={{ width: 100 + 'vw', height: 100 + 'vh', paddingTop: 2 + 'rem' }}
+      >
         <SearchBar />
       </div>
     </React.Fragment>
