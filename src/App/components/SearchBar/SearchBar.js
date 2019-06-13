@@ -1,8 +1,10 @@
 import React from 'react';
 import { Input } from 'semantic-ui-react';
 class SearchBar extends React.Component {
+  state = { inputVal: '' };
   handleInputChange = event => {
     console.log(event.target.value);
+    event.preventDefault();
   };
 
   render() {
@@ -13,7 +15,10 @@ class SearchBar extends React.Component {
             icon="search"
             placeholder="Search..."
             size="big"
-            onChange={this.handleInputChange}
+            value={this.state.inputVal}
+            onChange={e => {
+              this.setState({ inputVal: e.event.value });
+            }}
           />
         </form>
       </React.Fragment>
