@@ -2,22 +2,23 @@ import React from 'react';
 import { Input } from 'semantic-ui-react';
 class SearchBar extends React.Component {
   state = { inputVal: '' };
-  handleInputChange = event => {
-    console.log(event.target.value);
+
+  onFormSubmit = event => {
     event.preventDefault();
+    this.props.onUserSubmit(this.state.inputVal);
   };
 
   render() {
     return (
       <React.Fragment>
-        <form>
+        <form onSubmit={this.onFormSubmit}>
           <Input
             icon="search"
             placeholder="Search..."
             size="big"
             value={this.state.inputVal}
             onChange={e => {
-              this.setState({ inputVal: e.event.value });
+              this.setState({ inputVal: e.target.value });
             }}
           />
         </form>
