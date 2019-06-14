@@ -1,6 +1,6 @@
 import React from 'react';
 import SearchBar from './components/SearchBar/SearchBar';
-//import ImageList from './components/ImageList/ImageList';
+import ImageList from './components/ImageList/ImageList';
 import { Segment } from 'semantic-ui-react';
 
 class App extends React.Component {
@@ -21,6 +21,9 @@ class App extends React.Component {
         >
           <Segment>
             <SearchBar onUserSubmit={this.onSearchSubmit} />
+          </Segment>
+          <Segment>
+            <ImageList />
           </Segment>
         </div>
       </React.Fragment>
