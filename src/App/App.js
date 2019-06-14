@@ -3,7 +3,6 @@ import SearchBar from './components/SearchBar/SearchBar';
 import ImageList from './components/ImageList/ImageList';
 import { Segment } from 'semantic-ui-react';
 import unsplash from './api/unsplash';
-
 class App extends React.Component {
   state = { image_data: [], changed: false };
 

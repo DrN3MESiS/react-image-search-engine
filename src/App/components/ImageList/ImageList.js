@@ -1,11 +1,15 @@
+import './ImageList.css';
 import React from 'react';
-import { Header, Image } from 'semantic-ui-react';
+import { Header } from 'semantic-ui-react';
 
 const ImageList = props => {
   const length = props.data.length;
+
   const images = props.data.map(element => {
-    return <Image src={element.urls.regular} alt={element.created_at} />;
+    const { id, description, urls } = element;
+    return <img key={id} src={urls.regular} alt={description} />;
   });
+
   return (
     <React.Fragment>
       <div>
@@ -14,8 +18,7 @@ const ImageList = props => {
         ) : (
           <div />
         )}
-
-        {images}
+        <div className="image-list">{images}</div>
       </div>
     </React.Fragment>
   );
