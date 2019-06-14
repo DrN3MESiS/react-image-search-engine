@@ -5,7 +5,7 @@ import { Segment } from 'semantic-ui-react';
 import unsplash from './api/unsplash';
 
 class App extends React.Component {
-  state = { image_data: [] };
+  state = { image_data: [], changed: false };
 
   /*onSearchSubmit = term => {
     console.log(term);
@@ -25,7 +25,7 @@ class App extends React.Component {
       params: { query: term },
     });
 
-    this.setState({ image_data: res.data.results });
+    this.setState({ image_data: res.data.results, changed: true });
   };
 
   render() {
@@ -43,8 +43,10 @@ class App extends React.Component {
             <SearchBar onUserSubmit={this.onSearchSubmit} />
           </Segment>
           <Segment>
-            Found: {this.state.image_data.length} images.
-            <ImageList data={this.state.image_data} />
+            <ImageList
+              data={this.state.image_data}
+              changed={this.state.changed}
+            />
           </Segment>
         </div>
       </React.Fragment>
